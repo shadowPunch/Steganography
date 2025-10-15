@@ -14,8 +14,7 @@ def file_to_bits(filepath):
 
 
 def encode_audio_lsb(carrier_path, payload_path, output_path):
-    """Hides a payload file inside a carrier WAV file."""
-    
+  
     print("Reading carrier audio...")
     try:
         sample_rate, carrier_data = read(carrier_path)
@@ -52,7 +51,6 @@ def encode_audio_lsb(carrier_path, payload_path, output_path):
 
 
 def decode_audio_lsb(stego_path, output_payload_path):
-    """Extracts a hidden file from a stego WAV file."""
     
     print(f"Reading stego audio {stego_path}...")
     try:
@@ -104,9 +102,7 @@ try:
     decode_audio_lsb(stego_output, decoded_output)
 
     print("\n--- Process complete ---")
-    print(f"Try playing '{stego_output}' - it should sound identical to '{carrier_audio}'.")
-    print(f"Try playing '{decoded_output}' - it should be the 0.5-second beep.")
 
 except ValueError as e:
-    print(f"\n--- A controlled error occurred ---")
+    print(f"\n--- A error occurred ---")
     print(e)
